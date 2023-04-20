@@ -7,9 +7,7 @@ func Krypter(melding []rune, alphabet []rune, chiffer int) []rune {
 	for i := 0; i < len(melding); i++ {
 		indeks := sokIAlfabetet(melding[i], alphabet)
 		if indeks+chiffer >= len(alphabet) {
-			kryptertMelding[i] = alphabet[(indeks+chiffer)%len(alphabet)]
-		} else if indeks+chiffer < 0 {
-			kryptertMelding[i] = alphabet[(indeks+chiffer+len(alphabet))%len(alphabet)]
+			kryptertMelding[i] = alphabet[indeks+chiffer-len(alphabet)]
 		} else {
 			kryptertMelding[i] = alphabet[indeks+chiffer]
 		}
@@ -24,5 +22,5 @@ func sokIAlfabetet(symbol rune, alfabet []rune) int {
 			break
 		}
 	}
-	return -4
+	return -1
 }
