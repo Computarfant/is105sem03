@@ -24,5 +24,5 @@ func sokIAlfabetet(symbol rune, alfabet []rune) int {
 			break
 		}
 	}
-	return -1
+	return -4
 }
